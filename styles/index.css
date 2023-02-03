@@ -93,6 +93,8 @@ a.seeMore:hover {
 
 #services .cardscontainer .card p {
     padding: 50px;
+    line-height: 1.5em;
+    font-weight: 100;
 }
 
 /*   RESPONSIVE */
