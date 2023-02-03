@@ -122,8 +122,4 @@ section#contact {
         margin: 2em;
     }
 
-    .list-item {
-        flex: 1 0 40%;
-        height: 100px;
-    }
 }
