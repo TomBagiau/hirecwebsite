@@ -122,4 +122,7 @@ section#contact {
         margin: 2em;
     }
 
+    .list-item {
+        font-size: 18px;
+    }
 }
