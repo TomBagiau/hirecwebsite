@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hirec | Contact</title>
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/contact.css">
+    <link rel="stylesheet" href="styles/footer.css">
+
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>HIREC</h1>
+
+            <div class="menu">
+                <a class="navlink" href="index.html">Accueil</a>
+                <a class="navlink" href="apropos.html">A propos</a>
+                <a class="navlink" href="contact.html">Contact</a>
+                <a class="btnRdv" href="rdv.html">Prendre RDV</a>
+            </div>
+
+            <button class="hamburger">
+                <span class="material-icons">menu</span>
+            </button>
+        </nav>
+
+        <div class="mobile-menu">
+            <a class="navlink" href="index.html">Accueil</a>
+            <a class="navlink" href="apropos.html">A propos</a>
+            <a class="navlink" href="contact.html">Contact</a>
+            <a class="btnRdv" href="rdv.html">Prendre RDV</a>
+        </div>
+    </header>
+
+    <section id="contact">
+        <div class="contact-wrapper">
+            <form class="form-horizontal" id="contact-form" onsubmit="sendEmail(); reset(); return false;">
+                <div class="form-group">
+                    <input id="name" type="text" class="form-control" placeholder="NOM" name="name" required>
+                </div>
+                <div class="form-group">
+                    <input id="email" type="email" class="form-control" placeholder="EMAIL" name="email" required>
+                </div>
+                <textarea id="message" class="form-control" name="message" rows="10" cols="20" placeholder="MESSAGE"
+                    required></textarea>
+                <button class="btn send-button" value="Envoyer">Envoyer</button>
+            </form>
+
+            <div class="direct-contact-container">
+                <ul class="contact-list">
+                    <li class="list-item">
+                        <ion-icon name="person" class="contact-icon"></ion-icon>
+                        <span class="contact-text owner">Jean-Baptiste Turiault</span>
+                    </li>
+                    <li class="list-item">
+                        <ion-icon name="call" class="contact-icon"></ion-icon>
+                        <span class="contact-text phone"><a href="tel:+33756937490">07 56 93 74 90</a></span>
+                    </li>
+                    <li class="list-item">
+                        <ion-icon name="mail-unread" class="contact-icon"></ion-icon>
+                        <span class="contact-text mail"><a
+                                href="mailto:hirec.contact@gmail.com">hirec.contact@gmail.com</a></span>
+                    </li>
+                    <li class="list-item">
+                        <ion-icon name="navigate" class="contact-icon"></ion-icon>
+                        <span class="contact-text place">72000, Le Mans</span>
+                    </li>
+                </ul>
+
+                <hr>
+
+                <ul class="social-media-list">
+                    <li>
+                        <a href="" target="_blank" class="contact-img">
+                            <img src="images/facebook.png" alt="Facebook Hirec">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" target="_blank" class="contact-img">
+                            <img src="images/instagram.png" alt="Facebook Hirec">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" target="_blank" class="contact-img">
+                            <img src="images/twitter.png" alt="Facebook Hirec">
+                        </a>
+                    </li>
+                </ul>
+
+                <hr>
+
+                <div class="copyright">&copy; 2022-2023 HIREC.FR</div>
+            </div>
+        </div>
+    </section>
+
+</body>
+<script src="navbar.js"></script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+
+    /*
+    ****************************************************************
+    *              encrypté le mot de passe dans smtp.js           *
+    ****************************************************************
+    */
+    function sendEmail() {
+        Email.send({
+            Host: "smtp.elasticemail.com",
+            Username: "bagiautom@gmail.com",
+            Password: "717AE26DFB3B0BF7FC083ED53CD663426289",
+            To: 'kuviasnkrs@gmail.com',
+            From: document.getElementById("email").value,
+            Subject: "HIREC - Contact",
+            Body: "<h3> Nom:</h3> " + document.getElementById("name").value
+                + "<br><br> " +
+                "<h3> Email: </h3>" + document.getElementById("email").value + "<br><br> " +
+                "<h3> Message: </h3> " + document.getElementById("message").value,
+        }).then(
+            message => alert(message)
+        );
+    }
+</script>
+
+<script src="navbar.js"></script>
+
+</html>
